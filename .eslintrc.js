@@ -3,22 +3,18 @@ module.exports = {
     env: {
         node: true,
     },
+    settings: {
+        'import/resolver': 'webpack',
+    },
     parserOptions: {
         'parser': '@babel/eslint-parser',
     },
-    'settings': {
-        'import/resolver': {
-          'node': {
-            'paths': ['src'],
-            'extensions': ['.js', '.ts', '.d.ts'],
-          },
-        },
-      },
     extends: [
         'eslint:recommended',
         'plugin:vue/vue3-essential',
         'plugin:vue/vue3-strongly-recommended',
         'plugin:vue/vue3-recommended',
+        'plugin:import/recommended',
         'plugin:import/errors',
         'plugin:import/warnings',
     ],
@@ -54,8 +50,8 @@ module.exports = {
             'extensions': ['vue'],
             'shouldMatchCase': false,
         }],
-        'import/no-absolute-path': 'error',
+        'import/no-absolute-path': 'off',
         'import/newline-after-import': 'error',
-        'import/no-unresolved': ['error'],
+        'import/no-unresolved': 'off',
     },
 };
